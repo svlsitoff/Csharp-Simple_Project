@@ -1,0 +1,11 @@
+C:\Users\Владимир\Desktop\работа\C#\Simple_project\Simple_project\obj\Debug\Simple_project.csprojAssemblyReference.cache
+C:\Users\Владимир\Desktop\работа\C#\Simple_project\Simple_project\obj\Debug\Simple_project.Form1.resources
+C:\Users\Владимир\Desktop\работа\C#\Simple_project\Simple_project\obj\Debug\Simple_project.Properties.Resources.resources
+C:\Users\Владимир\Desktop\работа\C#\Simple_project\Simple_project\obj\Debug\Simple_project.csproj.GenerateResource.cache
+C:\Users\Владимир\Desktop\работа\C#\Simple_project\Simple_project\obj\Debug\Simple_project.csproj.CoreCompileInputs.cache
+C:\Users\Владимир\Desktop\работа\C#\Simple_project\Simple_project\bin\Debug\Simple_project.exe.config
+C:\Users\Владимир\Desktop\работа\C#\Simple_project\Simple_project\bin\Debug\Simple_project.exe
+C:\Users\Владимир\Desktop\работа\C#\Simple_project\Simple_project\bin\Debug\Simple_project.pdb
+C:\Users\Владимир\Desktop\работа\C#\Simple_project\Simple_project\obj\Debug\Simple_project.exe
+C:\Users\Владимир\Desktop\работа\C#\Simple_project\Simple_project\obj\Debug\Simple_project.pdb
+C:\Users\Владимир\Desktop\работа\C#\Simple_project\Simple_project\obj\Debug\Simple_project.HowMuch.resources
