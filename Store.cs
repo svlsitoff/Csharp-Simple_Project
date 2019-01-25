@@ -10,11 +10,11 @@ namespace Simple_project
 {
     class Store
     {
-        Supply sup;
-        public int WoodNum=0;
-        public int TableNum=0;
-        string woodpath = @"ForStore\Wood.txt";
-        string tablepath = @"ForStore\Tables.txt";
+
+        public int WoodNum;
+        public int TableNum;
+       public string woodpath = @"ForStore\Wood.txt";
+       public string tablepath = @"ForStore\Tables.txt";
         public Store()
         {
             //получаем данные о дереве и столах из текстовых файлов
@@ -39,7 +39,7 @@ namespace Simple_project
             {
                 MessageBox.Show("Нет файлов");
             }
-            sup = new Supply();
+          
         }
 
         //определяем два метода которые будут записывать данные в текстовые файлы
@@ -59,16 +59,18 @@ namespace Simple_project
                 sr.WriteLine(data);
             }
         }
-        public void OrderWood(int num)
+        public void OrderWood(int count)
         {
-           WoodNum += sup.BringWood(num);
+       //     sup.BringWood(count);
+           WoodNum += count;
            WriteWoodData(WoodNum.ToString());
            
             
         }
         public void SaleTable(int num)
         {
-            TableNum -= sup.SaleProduct(num);
+          //  sup.SaleProduct(num);
+            TableNum -= num;
             WriteTableData(TableNum.ToString());
         }
 

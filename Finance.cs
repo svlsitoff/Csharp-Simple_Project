@@ -10,7 +10,7 @@ namespace Simple_project
 {
     class Finance
     {
-        string moneypath = @"ForMoney\Money.txt";
+       public string moneypath = @"ForMoney\Money.txt";
         public int money;
         public Finance()
         {
