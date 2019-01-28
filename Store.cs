@@ -1,67 +1,84 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Linq;
+using System.Data.SqlClient;
 
 namespace Simple_project
 {
     class Store
     {
-
+        string storepath = @"ForStore\Store.xml";
+       // string connectionstrong =@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Владимир\Desktop\работа\C#\Simple_project\Simple_project\Database1.mdf;Integrated Security=True"
         public int WoodNum;
         public int TableNum;
-       public string woodpath = @"ForStore\Wood.txt";
-       public string tablepath = @"ForStore\Tables.txt";
+       //public string woodpath = @"ForStore\Wood.txt";
+       //public string tablepath = @"ForStore\Tables.txt";
         public Store()
         {
-            //получаем данные о дереве и столах из текстовых файлов
-            
-            if ((File.Exists(AppDomain.CurrentDomain.BaseDirectory + woodpath)) && File.Exists(AppDomain.CurrentDomain.BaseDirectory + tablepath))
+            if ((File.Exists(AppDomain.CurrentDomain.BaseDirectory + storepath)))
             {
-                using (StreamReader sr = new StreamReader(woodpath, Encoding.Default))
-                {
 
-                    bool succes = Int32.TryParse(sr.ReadLine(), out WoodNum);
-                    
-                 
-                }
-                using (StreamReader sr = new StreamReader(tablepath, Encoding.Default))
+                XDocument document = XDocument.Load(storepath);
+                XElement element = document.Element("products");
+                foreach (var node in element.Elements("product"))
                 {
-
-                    bool succes = Int32.TryParse(sr.ReadLine(), out TableNum);
-                
+                    if (node.Attribute("name").Value == "wood")
+                    {
+                        WoodNum = Int32.Parse (node.Element("count").Value);
+                    }
+                    if (node.Attribute("name").Value == "table")
+                    {
+                        TableNum = Int32.Parse(node.Element("count").Value);
+                    }
                 }
             }
             else
             {
                 MessageBox.Show("Нет файлов");
             }
+            
+
+            
+            
           
         }
 
         //определяем два метода которые будут записывать данные в текстовые файлы
             public void WriteWoodData(string data)
             {
-             using (StreamWriter sr = new StreamWriter(woodpath,false, Encoding.Default))
+            XDocument document = XDocument.Load(storepath);
+            XElement element = document.Element("products");
+            foreach (var node in element.Elements("product"))
+            {
+                if (node.Attribute("name").Value == "wood")
                 {
-
-                sr.WriteLine(data);
+                   node.Element("count").Value = data;
                 }
+               
             }
+            document.Save(storepath);
+
+        }
         public void WriteTableData(string data)
         {
-            using (StreamWriter sr = new StreamWriter(tablepath, false, Encoding.Default))
+            XDocument document = XDocument.Load(storepath);
+            XElement element = document.Element("products");
+            foreach (var node in element.Elements("product"))
             {
+                if (node.Attribute("name").Value == "table")
+                {
+                    node.Element("count").Value = data;
+                }
 
-                sr.WriteLine(data);
             }
+            document.Save(storepath);
+
         }
         public void OrderWood(int count)
         {
-       //     sup.BringWood(count);
            WoodNum += count;
            WriteWoodData(WoodNum.ToString());
            
@@ -69,7 +86,6 @@ namespace Simple_project
         }
         public void SaleTable(int num)
         {
-          //  sup.SaleProduct(num);
             TableNum -= num;
             WriteTableData(TableNum.ToString());
         }

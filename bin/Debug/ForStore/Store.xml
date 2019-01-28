@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<products>
+  <product name="wood">
+    <count>760</count>
+  </product>
+  <product name="table">
+    <count>530</count>
+  </product>
+</products>

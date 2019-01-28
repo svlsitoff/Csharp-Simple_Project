@@ -8,3 +8,5 @@ C:\Users\Владимир\Desktop\работа\C#\Simple_project\Simple_project\
 C:\Users\Владимир\Desktop\работа\C#\Simple_project\Simple_project\bin\Debug\Simple_project.pdb
 C:\Users\Владимир\Desktop\работа\C#\Simple_project\Simple_project\obj\Debug\Simple_project.exe
 C:\Users\Владимир\Desktop\работа\C#\Simple_project\Simple_project\obj\Debug\Simple_project.pdb
+C:\Users\Владимир\Desktop\работа\C#\Simple_project\Simple_project\bin\Debug\Database1.mdf
+C:\Users\Владимир\Desktop\работа\C#\Simple_project\Simple_project\bin\Debug\Database1_log.ldf
